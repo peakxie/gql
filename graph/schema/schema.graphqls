@@ -2,12 +2,32 @@
 #
 # https://gqlgen.com/getting-started/
 
+scalar Int32
+scalar Int64
+scalar Uint32
+scalar Uint64
 
+type Todo {
+  id: Uint64!
+  text: String!
+  done: Boolean!
+  user: User!
+}
+
+type User {
+  id: Uint64!
+  name: String!
+}
 
 type Query {
-  todo(id: Int32!): Int32!
+  todos: [Todo!]!
+}
+
+input NewTodo {
+  text: String!
+  name: String!
 }
 
 type Mutation {
-  todo(input: Int32!): Int32!
+  createTodo(input: NewTodo!): Todo!
 }
