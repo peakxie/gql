@@ -1,0 +1,13 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+
+
+type Query {
+  todo(id: Int32!): Int32!
+}
+
+type Mutation {
+  todo(input: Int32!): Int32!
+}
